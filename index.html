@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,#root{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        #input,#output{
+            display: inline-block;
+            width: 50%;
+            height: 400px;
+        }
+        #input{
+            border: 5px solid red;
+        }
+        #output{
+            border: 5px solid yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="input"></div>
+    <div id="output"></div>
+</div>
+
+<script type="module">
+   import { Mark }from './index.js'
+   const str =
+       "## 1 Markdown Nice 简介\n"+
+       "### h3"+
+       "   \n"
+    const inp = document.getElementById('input')
+    const out = document.getElementById('output')
+    inp.innerHTML = str;
+    const result  = Mark(str)
+    out.innerHTML = result
+</script>
+</body>
+</html>
